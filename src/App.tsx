@@ -184,12 +184,7 @@ export const App: React.FC = () => {
   const someCompleted = todos.some(todo => todo.completed === true);
 
   const tempTodo: Todo | null = isAdding
-    ? {
-        id: 0,
-        title: newTodoTitle,
-        completed: false,
-        userId: USER_ID,
-      }
+    ? { id: 0, title: newTodoTitle, completed: false, userId: USER_ID }
     : null;
 
   if (!USER_ID) {

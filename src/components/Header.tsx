@@ -6,6 +6,7 @@ interface HeaderProps {
   inputRef: RefObject<HTMLInputElement>;
   handleSubmit: (event: FormEvent) => void;
   setNewTodoTitle: (title: string) => void;
+  isAdding: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -14,6 +15,7 @@ export const Header: React.FC<HeaderProps> = ({
   inputRef,
   handleSubmit,
   setNewTodoTitle,
+  isAdding,
 }) => {
   return (
     <header className="todoapp__header">
@@ -32,6 +34,7 @@ export const Header: React.FC<HeaderProps> = ({
           placeholder="What needs to be done?"
           value={newTodoTitle}
           onChange={event => setNewTodoTitle(event.target.value)}
+          disabled={isAdding}
         />
       </form>
     </header>

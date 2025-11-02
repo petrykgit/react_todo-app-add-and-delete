@@ -1,8 +1,16 @@
 import React from 'react';
+import cn from 'classnames';
 
-export const Loader: React.FC = () => {
+interface LoaderProps {
+  showLoader: boolean;
+}
+
+export const Loader: React.FC<LoaderProps> = ({ showLoader }) => {
   return (
-    <div data-cy="TodoLoader" className="modal overlay is-active">
+    <div
+      data-cy="TodoLoader"
+      className={cn('modal overlay', { 'is-active': showLoader })}
+    >
       <div className="modal-background has-background-white-ter" />
       <div className="loader" />
     </div>
